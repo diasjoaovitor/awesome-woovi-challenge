@@ -1,7 +1,14 @@
-import { MyComponent } from '@/components'
+import { QueryProvider, ThemeProvider } from './providers'
+import { Router } from './Router'
 
 export const App = () => {
-  return <MyComponent />
+  return (
+    <ThemeProvider>
+      <QueryProvider>
+        <Router />
+      </QueryProvider>
+    </ThemeProvider>
+  )
 }
 
 export default App
