@@ -1,7 +1,9 @@
 import { userFirstName } from '@/repositories'
+import { TUser } from '@/types'
 import { delay } from '@/utils'
 
 export const getUser = async () => {
   await delay()
-  return { firstName: userFirstName }
+  const user: TUser = { firstName: userFirstName }
+  return user
 }

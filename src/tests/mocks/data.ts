@@ -1,6 +1,8 @@
-import { TInstallment } from '@/types'
+import { TInstallment, TUser } from '@/types'
 
-export const mockedUserFirstName = 'Vitor'
+export const mockedUser: TUser = {
+  firstName: 'Vitor'
+}
 
 export const mockedInstallments: TInstallment[] = [
   {

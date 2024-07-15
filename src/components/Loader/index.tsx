@@ -1,22 +1,21 @@
-import { Backdrop, Box } from '@mui/material'
+import { Backdrop, Box, Typography } from '@mui/material'
 import { HeaderLogo } from '../Logo'
 import * as S from './styles'
 
 export type TLoaderProps = {
   open: boolean
+  description?: string
 }
 
-export const Loader = ({ open }: TLoaderProps) => {
+export const Loader = ({ open, description }: TLoaderProps) => {
   return (
-    <Backdrop
-      sx={{
-        zIndex: (theme) => theme.zIndex.drawer + 1
-      }}
-      open={Boolean(open)}
-    >
+    <Backdrop sx={S.Wrapper} open={Boolean(open)}>
       <Box sx={S.Animation}>
         <HeaderLogo />
       </Box>
+      <Typography variant="h5" component="p" color="primary.main">
+        {description}
+      </Typography>
     </Backdrop>
   )
 }

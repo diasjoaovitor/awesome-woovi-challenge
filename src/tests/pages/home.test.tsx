@@ -1,16 +1,12 @@
 import { beforeEach, describe, expect, test, vi } from 'vitest'
 import { fireEvent, render, screen, waitFor } from '@testing-library/react'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import { Home } from '@/pages'
+import { PaymentMethod } from '@/pages'
 import { ThemeProvider } from '@/providers'
 import { getInstallments, getUser } from '@/services'
 import { lightTheme } from '@/themes'
 import { memoryRouter } from '../utils'
-import {
-  mockedInstallments,
-  mockedUserFirstName,
-  QRCodePageMock
-} from '../mocks'
+import { mockedInstallments, mockedUser, PageMock } from '../mocks'
 
 const timeout = 2100
 
@@ -30,11 +26,11 @@ const setup = () => {
     [
       {
         path: '/',
-        element: <Home />
+        element: <PaymentMethod />
       },
       {
-        path: '/qr-code',
-        element: <QRCodePageMock />
+        path: '/pix-credit-payment',
+        element: <PageMock />
       }
     ],
     {
@@ -56,9 +52,9 @@ const setup = () => {
 const getListItem = (radioInput: HTMLInputElement) =>
   radioInput.parentElement?.parentElement?.parentElement
 
-describe('<Home />', () => {
+describe('<PaymentMethod />', () => {
   beforeEach(() => {
-    vi.mocked(getUser).mockResolvedValue({ firstName: mockedUserFirstName })
+    vi.mocked(getUser).mockResolvedValue(mockedUser)
   })
 
   test('should render message when no data exists', async () => {
@@ -144,7 +140,7 @@ describe('<Home />', () => {
     fireEvent.click(screen.getByRole('button', { name: 'avançar' }))
 
     // navigate to the next page
-    expect(router.state.location.pathname).toBe('/qr-code')
+    expect(router.state.location.pathname).toBe('/pix-credit-payment')
     expect(screen.getByText('id: 2')).toBeInTheDocument()
     expect(screen.getByText('quantity: 2')).toBeInTheDocument()
     expect(screen.getByText('total: 1100')).toBeInTheDocument()

@@ -1,5 +1,11 @@
 import { keyframes, SxProps, Theme } from '@mui/material'
 
+export const Wrapper: SxProps<Theme> = {
+  zIndex: (theme) => theme.zIndex.drawer + 1,
+  flexDirection: 'column',
+  gap: 2
+}
+
 const blink = keyframes`
   0% {
     opacity: 1;

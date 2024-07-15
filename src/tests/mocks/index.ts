@@ -1,2 +1,2 @@
 export * from './data'
-export * from './QRCodePageMock'
+export * from './PageMock'

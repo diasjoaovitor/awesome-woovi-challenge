@@ -1,26 +1,20 @@
 import { useNavigate } from 'react-router-dom'
 import { Layout, PaymentList, TPaymentListProps } from '@/components'
 import { TInstallment } from '@/types'
-import { useHome } from '@/hooks'
+import { usePaymentMethod } from '@/hooks'
 import { getBestInstallmentOption, getCashback } from '@/utils'
 import * as S from './styles'
 
-export const Home = () => {
+export const PaymentMethod = () => {
   const navigate = useNavigate()
 
-  const {
-    alert,
-    installments,
-    isError,
-    isLoading,
-    user: { firstName }
-  } = useHome()
+  const { alert, installments, isError, isLoading, user } = usePaymentMethod()
 
   const bestInstallmentOption = getBestInstallmentOption()
   const cashback = getCashback()
 
   const handleNext = (installment: TInstallment) => {
-    navigate('/qr-code', { state: { installment } })
+    navigate('/pix-credit-payment', { state: { installment, user } })
   }
 
   const paymentListProps: TPaymentListProps = {
@@ -32,7 +26,7 @@ export const Home = () => {
 
   return installments.length > 0 ? (
     <Layout
-      title={`${firstName}, como você quer pagar?`}
+      title={`${user.firstName}, como você quer pagar?`}
       isError={isError}
       isLoading={isLoading}
       alert={alert}

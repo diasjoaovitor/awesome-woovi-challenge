@@ -39,3 +39,5 @@ export const installments: TInstallment[] = [
     total: 31800
   }
 ]
+
+export const pixCode = '4583ce4c-9a99-4c4f-8339-279de1cc7810'

@@ -4,7 +4,7 @@ import { getInstallments, getUser } from '@/services'
 import { TInstallment } from '@/types'
 import { useAlert } from './useAlert'
 
-export const useHome = () => {
+export const usePaymentMethod = () => {
   const [user, setUser] = useState({ firstName: '' })
   const [installments, setInstallments] = useState<TInstallment[]>([])
 
