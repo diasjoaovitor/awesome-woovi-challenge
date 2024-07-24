@@ -1,3 +1,6 @@
 export * from './formatter'
 export * from './generic'
+export * from './getters'
+export * from './input-masks'
 export * from './payment'
+export * from './validators'

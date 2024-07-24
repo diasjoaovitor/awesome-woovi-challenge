@@ -19,6 +19,7 @@ export const usePixCreditPayment = () => {
   const { quantity, total } = installment
   const { firstName } = user
   const installmentValue = total / quantity
+  const installments = new Array(quantity).fill(installmentValue)
 
   useEffect(() => {
     if (!paymentSituation) return
@@ -41,13 +42,16 @@ export const usePixCreditPayment = () => {
   }
 
   const handleNavigate = () => {
-    navigate('/credit-payment', { state: { installment, user } })
+    installment.quantity !== 1
+      ? navigate('/credit-payment', { state: { installment, user } })
+      : navigate('/approved-payment')
   }
 
   return {
     firstName,
     installment,
     installmentValue,
+    installments,
     alert,
     open,
     handleCopy

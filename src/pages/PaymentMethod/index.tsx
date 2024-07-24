@@ -28,7 +28,7 @@ export const PaymentMethod = () => {
     <Layout
       title={`${user.firstName}, como você quer pagar?`}
       isError={isError}
-      isLoading={isLoading}
+      loader={{ open: isLoading }}
       alert={alert}
       sx={S.Wrapper}
     >
@@ -38,7 +38,7 @@ export const PaymentMethod = () => {
     <Layout
       title={'Não existe nenhum dado para ser exibido'}
       isError={isError}
-      isLoading={isLoading}
+      loader={{ open: isLoading }}
       alert={alert}
       sx={{ textAlign: 'center' }}
     >

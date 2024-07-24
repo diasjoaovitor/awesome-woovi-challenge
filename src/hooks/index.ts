@@ -1,4 +1,5 @@
 export * from './useAlert'
+export * from './useCreditPayment'
 export * from './useOpen'
 export * from './usePaymentMethod'
 export * from './usePixCreditPayment'

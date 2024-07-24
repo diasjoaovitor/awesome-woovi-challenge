@@ -10,13 +10,3 @@ export const Figure: SxProps<Theme> = {
     width: '100%'
   }
 }
-
-export const Flex: SxProps<Theme> = {
-  display: 'flex',
-  justifyContent: 'space-between',
-  gap: 1
-}
-
-export const List: SxProps<Theme> = {
-  textAlign: 'left'
-}

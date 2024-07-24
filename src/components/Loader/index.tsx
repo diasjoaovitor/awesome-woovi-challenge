@@ -1,4 +1,4 @@
-import { Backdrop, Box, Typography } from '@mui/material'
+import { Backdrop, Box, Paper, Typography } from '@mui/material'
 import { HeaderLogo } from '../Logo'
 import * as S from './styles'
 
@@ -13,9 +13,13 @@ export const Loader = ({ open, description }: TLoaderProps) => {
       <Box sx={S.Animation}>
         <HeaderLogo />
       </Box>
-      <Typography variant="h5" component="p" color="primary.main">
-        {description}
-      </Typography>
+      {description && (
+        <Paper sx={S.Paper}>
+          <Typography variant="h5" component="p">
+            {description}
+          </Typography>
+        </Paper>
+      )}
     </Backdrop>
   )
 }

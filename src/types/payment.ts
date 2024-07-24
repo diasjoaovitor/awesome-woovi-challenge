@@ -13,3 +13,11 @@ export type TCashback = {
   percentage: number
   immediateCashbackValue: number
 }
+
+export type TCreditCardPayment = {
+  fullName: string
+  cpf: string
+  cardNumber: string
+  cardExpiration: string
+  cvv: string
+}
