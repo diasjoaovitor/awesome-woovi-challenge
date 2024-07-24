@@ -14,9 +14,28 @@ This Repository contains the [Frontend Engineer Challenge](https://woovi.com/job
 
 This projects uses the [Vite Boilerplate](https://github.com/diasjoaovitor/vite-boilerplate), a setup with `Prettier`, `Eslint`, `Commit Linter`, `Component Generator`, `Automatized Tests`, `Continuous Integration`, etc.
 
+### Preview
+
+![Gif](./.github/assets/preview.gif)
+
+### Execute
+
+```
+cd awesome-woovi-challenge
+npm i
+npm run dev
+```
+
+**Run tests**:
+
+```
+npm run test
+// or
+npm run test:watch
+```
+
 ## Contact
 
 - jvitordiass@outlook.com
 - [LinkedIn](https://www.linkedin.com/in/diasjoaovitor/)
 - [Curriculum](https://gist.github.com/diasjoaovitor/4548859f6934c991ada24ea1a663cd86)
-
